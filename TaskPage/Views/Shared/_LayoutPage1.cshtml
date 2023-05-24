@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Layout.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="masterdiv">
+        <ul class="ul1">
+            <li>
+                <img src="~/Images/catering2.jpg" />
+            </li>
+            <li>@Html.ActionLink("Main", "Main", "Page", new { area = "" }, new { @class = "navlink" })</li>
+            <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navlink" })</li>
+            <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navlink" })</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navlink" })</li>
+            <li>@Html.ActionLink("Orders", "Index", "Page", new { area = "" }, new { @class = "navlink" })</li>
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

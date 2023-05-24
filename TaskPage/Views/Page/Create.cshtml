@@ -1,0 +1,112 @@
+﻿@model TaskPage.Models.HomePage
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @*<table>
+        <tr>
+            <td colspan="2">
+                <center><img src="~/Images/Book.png" style="width:25px;height:25px" /></center>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <Center><b>Book Your Services</b></Center>
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { placeholder = "UserName" ,@class="editor"} })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+            </td>
+
+            <td>
+                @Html.LabelFor(model => model.Date_Time, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                @Html.EditorFor(model => model.Date_Time, new { htmlAttributes = new { @class = "form-control editor"} })
+                @Html.ValidationMessageFor(model => model.Date_Time, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+        <tr class="tr1">
+            <td>
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control editor" ,placeholder="123-456-7890"} })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </td>
+
+            <td>
+                @Html.LabelFor(model => model.EMail, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                @Html.EditorFor(model => model.EMail, new { htmlAttributes = new { @class = "form-control editor" ,placeholder="email@email.com"} })
+                @Html.ValidationMessageFor(model => model.EMail, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Order Now" style="background-color:red;color:white" />
+            </td>
+        </tr>
+    </table>*@
+
+
+    <div>
+        <div>
+            <center><img src="~/Images/Book.png" style="width:25px;height:25px" /></center>
+        </div>
+        <div>
+            <Center><b>Book Your Services</b></Center>
+            <hr />
+        </div>
+        <div class="parent1">
+
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "label" })
+
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-dangers" })
+
+            @Html.LabelFor(model => model.Date_Time, htmlAttributes: new { @class = "label1" })
+            @Html.ValidationMessageFor(model => model.Date_Time, "", new { @class = "text-dangers" })
+
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { placeholder = "UserName", @class = "editor" } })
+
+            @Html.EditorFor(model => model.Date_Time, new { htmlAttributes = new { @class = "form-control editor" } })
+
+
+
+
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "label" })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-dangers" })
+
+            @Html.LabelFor(model => model.EMail, htmlAttributes: new { @class = "label1" })
+            @Html.ValidationMessageFor(model => model.EMail, "", new { @class = "text-dangers" })
+
+            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control editor", placeholder = "123-456-7890" } })
+
+
+
+            @Html.EditorFor(model => model.EMail, new { htmlAttributes = new { @class = "form-control editor", placeholder = "email@email.com" } })
+
+
+        </div>
+        <div class="submit">
+            <input type="submit" value="Order Now" style="background-color:red;color:white" />
+        </div>
+    </div>
+}
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
